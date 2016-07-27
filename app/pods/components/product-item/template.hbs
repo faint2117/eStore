@@ -1,16 +1,16 @@
-<div class="panel panel-default library-item">
-  <div class="panel-heading">
+<div class="panel panel-default product-item">
+  <div class="panel-heading border">
     <h3 class="panel-title">{{item.name}}</h3>
   </div>
   <div>
     <a href="www.google.com.mx">
-      <img src="/assets/images/default-product.png" alt="" style="max-width:200px;max-height:200px;border:0;" />
+      <img src="/assets/images/default-product.png" alt=""  />
     </a>
   </div>
   <div class="panel-body">
     <p>price: {{item.price}}</p>
   </div>
   <div class="panel-footer text-left">
-    <input type="button" name="btnAddToCart" value="Add to Cart" class="btn btn-large btn-success">
+    <input type="button" name="btnAddToCart" value="{{btnLabel}}" class="btn btn-large btn-success" {{action 'buttonClicked' item}}>
   </div>
 </div>

@@ -1,0 +1,10 @@
+<h1>Products</h1>
+
+<div class="well">
+    <ul class="nav nav-pills">
+      {{#link-to 'products.index' tagName="li"}}<a href="">List all</a>{{/link-to}}
+      {{#link-to 'products.add' tagName="li"}}<a href="">Add new</a>{{/link-to}}
+    </ul>
+</div>
+
+{{outlet}}

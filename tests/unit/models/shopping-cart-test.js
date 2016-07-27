@@ -1,8 +1,8 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('shopping-cart', 'Unit | Model | shopping cart', {
+moduleForModel('shopping-cart', 'Unit | Model | shopping-cart', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:product']
 });
 
 test('it exists', function(assert) {

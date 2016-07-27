@@ -3,3 +3,12 @@
 body {
   padding-top: 20px;
 }
+
+html {
+  overflow-y: scroll;
+}
+
+.product-item {
+  max-height: 400px;
+  max-width: 210px;
+}
