@@ -1,31 +1,31 @@
-<h1>Shopping History</h1>
+<h1>Order details</h1>
 <div class="row">
   <table class="table">
     <thead>
       <th>
-        OrderId
+        LineId
       </th>
       <th>
-        Status
+        Product
       </th>
       <th>
+        Quantity
       </th>
     </thead>
     <tbody>
-      {{#each model as |order|}}
+      {{#each model.lines as |line|}}
         <tr>
           <td>
-            {{order.id}}
+            {{line.id}}
           </td>
           <td>
-            {{order.status}}
+            {{line.product.name}}
           </td>
           <td>
-            {{#link-to 'shopping-history.details' order.id}}details{{/link-to}}
+            {{line.quantity}}
           </td>
         </tr>
       {{/each}}
     </tbody>
   </table>
 </div>
-{{outlet}}

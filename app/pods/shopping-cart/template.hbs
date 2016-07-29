@@ -1,9 +1,9 @@
 <h2>Shopping Cart</h2>
 <div class="row">
   {{#each model as |shoppingCart|}}
-    {{#each shoppingCart.products as |product|}}
+    {{#each shoppingCart.items as |item|}}
       <div class="col-md-3">
-        {{product-item item=product btnLabel='Add to Cart' action='addProduct'}}
+        {{product-item item=item.product quantity=item.quantity btnLabel='Add to Cart' action='addProduct'}}
       </div>
     {{/each}}
   {{/each}}

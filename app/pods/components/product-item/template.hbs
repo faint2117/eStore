@@ -9,6 +9,9 @@
   </div>
   <div class="panel-body">
     <p>price: {{item.price}}</p>
+    {{#if quantity}}
+      <a href="#" class="glyphicon glyphicon-minus-sign"></a> quantity: <input class="input-sm quantity-txt" type="textbox" value="{{quantity}}"> <a href="#" class="glyphicon glyphicon-plus-sign"></a>
+    {{/if}}
   </div>
   <div class="panel-footer text-left">
     <input type="button" name="btnAddToCart" value="{{btnLabel}}" class="btn btn-large btn-success" {{action 'buttonClicked' item}}>

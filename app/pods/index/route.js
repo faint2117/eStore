@@ -27,10 +27,27 @@ export default Ember.Route.extend({
         else {
           shoppingCart = cart;
         }
-        let producList = shoppingCart.get('products');
-        producList.addObject(item);
-
-        shoppingCart.save().then(() => this.transitionTo('shopping-cart'));
+        let cartItemList = shoppingCart.get('items');
+        let cartItem = cartItemList.find((currentItem) => {
+          if(currentItem.product === item ){
+            return true;
+          }
+        });
+        if(cartItem){
+          cartItem.quantity++;
+        }
+        else {
+          cartItem = this.store.createRecord('cartItem',{
+            product : item,
+            quantity : 1
+          });
+          cartItemList.addObject(cartItem);
+        }
+        cartItem.save().then(() =>{
+          shoppingCart.save().then(() =>{
+            this.transitionTo('shopping-cart');
+          });
+        });
       });
     }
   }

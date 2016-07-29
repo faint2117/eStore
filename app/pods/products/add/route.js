@@ -14,7 +14,14 @@ export default Ember.Route.extend({
 
   actions: {
     saveProduct(item) {
+      item.categoryId = 1;
       item.save().then(() => this.transitionTo('products'));
+    },
+
+    willTransition() {
+      // rollbackAttributes() removes the record from the store
+      // if the model 'isNew'
+      this.controller.get('model').rollbackAttributes();
     }
   }
 });
